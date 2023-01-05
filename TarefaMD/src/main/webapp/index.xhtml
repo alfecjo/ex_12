@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet library="css" name="default.css"/>
+        <h:outputStylesheet library="css" name="cssLayout.css"/>
+        <title>Pratique Soma</title>
+    </h:head>
+
+    <h:body>
+        <div id="top">
+            <ui:insert name="top">Pratique soma de dois números fornecendo apenas o resultado e check seus acertos...</ui:insert>
+            <h:form id="form0">
+                <ui:insert name="">Informe seu nome: </ui:insert>
+                <h:inputText value="#{jsfJogador.descricao}"/>
+                <h:commandButton id="ger" value="Cadastro"
+                                 action="#{jsfJogador.add()}" />                                  
+            </h:form>
+
+        </div>
+
+        <div id="content" class="center_content">
+            <ui:insert name="">Entre com resultado da soma e pressione o botão: </ui:insert>
+            <h:form id="form1">
+                <h:inputText value="#{jsfRanking.valor}"/>
+                <ui:insert name=""> + </ui:insert>
+                <h:inputText value="#{jsfRanking.valor1}"/>
+                <ui:insert name=""> = </ui:insert>
+                <h:inputText value="#{jsfRanking.soma}"/>
+
+                <h:form>
+                    <h:dataTable value="#{jsfJogador.all}" var="prod">                
+                        <h:column>
+                            <h:outputText value="#{prod.descricao}"/>
+                        </h:column>
+                        <h:column>
+                            <h:outputText value="#{prod.id}"/>
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="Resultado"
+                                             action="#{jsfRanking.add(prod)}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
+
+
+                <ui:insert name="bottom">Soma esta </ui:insert>
+                <h:outputText value="#{jsfRanking.resultado}"/> 
+                <ui:insert name=""> : </ui:insert>
+                <h:outputText value="#{jsfRanking.soma}"/>               
+            </h:form>            
+        </div>
+    </h:body>
+</html>
