@@ -13,7 +13,7 @@ Desenvolver um EJB para (Jogo Somar aproveitando ex_11):
 - Apresentar uma mensagem de erro ou acerto da soma. Cada acerto o usuário ganha um ponto.
 - Exibir um ranking com os usuários que mais pontuaram.
 - Poderá ser utilizado qualquer cliente.
-- Todas as funcionalidades de (acima, já estão no ex_11) podem ser implementadas em uma única tela. 
+- Todas as funcionalidades acima, já estão no ex_11. 
 
 #### 📫 IMPLEMENTAR:
 
